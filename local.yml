@@ -11,20 +11,20 @@
         - tmux
 
 - name: copy wallpaper file
-  copy:
+   copy:
     src: files/wallpaper.jpg
     dest: /usr/share/backgrounds/ansible-wallpaper.jpg
     owner: root
     group: root
 
 - name: set wallpaper
-  become_user: wesleythibodeaux
-  dconf:
+   become_user: wesleythibodeaux
+   dconf:
     key: "/org/gnome/desktop/background/picture-uri"
     value: "'file:///usr/share/backgrounds/ansible-wallpaper.jpg'"
 
 - name: set wallpaper position
-  become_user: wesleythibodeaux
-  dconf:
+   become_user: wesleythibodeaux
+   dconf:
     key: "/org/gnome/desktop/background/picture-options"
     value: "'zoom'"
